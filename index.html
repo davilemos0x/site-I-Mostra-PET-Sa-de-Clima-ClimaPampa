@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Mostra PET Saúde Clima - ClimaPampa | UNIPAMPA - Uruguaiana/RS</title>
+  <meta name="description" content="I Mostra PET Saúde Clima - ClimaPampa, promovida pela UNIPAMPA no Campus Uruguaiana, nos dias 27 e 28 de novembro de 2026. Submissão online de 05/10 a 02/11/2026. Apresentações em rodas de conversa." />
+  
+  <!-- Favicon gerado a partir da logo oficial -->
+  <link rel="icon" type="image/png" href="img/icon.png" />
+
+  <!-- Fontes Google (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Barra Superior de Navegação -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="brand-link">
+        <img src="img/logo_oficial.png" alt="Logo PET-Saúde CLIMA UNIPAMPA" class="brand-logo-oficial" />
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#sobre" class="nav-link">Sobre a Mostra</a>
+        <a href="#eixos" class="nav-link">Eixos Temáticos</a>
+        <a href="#programacao" class="nav-link">Programação</a>
+        <a href="#submissoes" class="nav-link">Submissão de Trabalhos</a>
+        <a href="#inscricao" class="nav-link">Ouvintes</a>
+        <a href="#local" class="nav-link">Local</a>
+        <a href="#faq" class="nav-link">Dúvidas</a>
+        <a href="https://forms.gle/qvkQ1hmF9cERvZNH6" target="_blank" class="btn btn-primary btn-sm nav-cta">
+          <i class="ph-bold ph-paper-plane-tilt"></i> Submeter Trabalho
+        </a>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu de navegação">
+        <i class="ph ph-list" id="toggleIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section Principal -->
+  <section class="hero" id="inicio">
+    <div class="hero-backdrop"></div>
+    <div class="container hero-content">
+      
+      <!-- Selo Institucional -->
+      <div class="badge-pill">
+        <i class="ph-fill ph-graduation-cap"></i> Universidade Federal do Pampa &bull; Campus Uruguaiana
+      </div>
+
+      <!-- Banner Oficial do Evento -->
+      <div class="banner-wrapper">
+        <img src="img/banner.png" alt="I Mostra do PET-Saúde: Clima - UNIPAMPA (Ponte Internacional de Uruguaiana)" class="hero-banner-img" />
+      </div>
+
+      <!-- Título Oficial com ClimaPampa -->
+      <h1 class="hero-title">
+        I Mostra <span class="text-green">PET Saúde Clima</span> &bull; <span class="gradient-text">ClimaPampa</span>
+      </h1>
+      
+      <p class="hero-description">
+        Promovida pela Universidade Federal do Pampa (UNIPAMPA). Integrando ensino, serviços de saúde e a comunidade através de diálogos horizontais e rodas de conversa no Pampa gaúcho.
+      </p>
+
+      <!-- Informações Rápidas em Pílulas (Datas Corrigidas: 27 e 28 de Novembro) -->
+      <div class="hero-info-tags">
+        <div class="info-tag">
+          <i class="ph-bold ph-calendar-check text-green"></i>
+          <span><strong>27 e 28 de Novembro de 2026</strong></span>
+        </div>
+        <div class="info-tag">
+          <i class="ph-bold ph-chats text-blue"></i>
+          <span>Apresentações em <strong>Rodas de Conversa</strong></span>
+        </div>
+        <div class="info-tag">
+          <i class="ph-bold ph-map-pin text-green"></i>
+          <span><strong>Presencial</strong> &bull; Campus Uruguaiana / RS</span>
+        </div>
+        <div class="info-tag">
+          <i class="ph-bold ph-certificate text-orange"></i>
+          <span><strong>100% Gratuito</strong> &bull; Certificado Oficial</span>
+        </div>
+      </div>
+
+      <!-- Botões de Ação Principal -->
+      <div class="hero-actions">
+        <a href="#submissoes" class="btn btn-primary btn-lg">
+          <i class="ph-bold ph-paper-plane-tilt"></i> Submissão de Trabalhos
+        </a>
+        <a href="#inscricao" class="btn btn-secondary btn-lg">
+          <i class="ph-bold ph-users"></i> Inscrição de Ouvintes (Em Breve)
+        </a>
+      </div>
+
+      <!-- Contagem Regressiva para 27 de Novembro de 2026 -->
+      <div class="countdown-wrapper">
+        <p class="countdown-label">
+          <i class="ph-bold ph-clock-countdown"></i> Faltam para a abertura do evento:
+        </p>
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-text">Dias</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-text">Horas</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-text">Minutos</span>
+          </div>
+          <div class="countdown-separator">:</div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-text">Segundos</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Métricas Rápidas / Destaques -->
+  <section class="metrics-section">
+    <div class="container metrics-grid">
+      <div class="metric-card">
+        <span class="metric-num">2 Dias</span>
+        <span class="metric-desc">27 e 28 de novembro de 2026</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num">3 Eixos</span>
+        <span class="metric-desc">Temáticos interdisciplinares</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num">Rodas de Conversa</span>
+        <span class="metric-desc">Apresentações dinâmicas e participativas</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-num">Até 10 Horas</span>
+        <span class="metric-desc">Certificação de ouvintes pela UNIPAMPA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre a Mostra e o PET-Saúde -->
+  <section class="section about-section" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PROJETO CLIMAPAMPA</span>
+        <h2 class="section-title">Saúde Pública e Emergência Climática na Fronteira Oeste</h2>
+        <p class="section-subtitle">
+          Conheça a trajetória do projeto ClimaPampa, aprovado na 13ª edição nacional do PET-Saúde pelo Ministério da Saúde.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-box">
+          <h3>Sobre o PET-Saúde: Clima e a Mostra</h3>
+          <p>
+            A <strong>I Mostra PET Saúde Clima - ClimaPampa</strong> nasce no âmbito do projeto <em>“ClimaPampa: Produção do Cuidado Integral no Território e Inovação em Saúde”</em>, iniciativa da UNIPAMPA aprovada nacionalmente na <strong>13ª edição do Programa de Educação pelo Trabalho para a Saúde (PET-Saúde: Clima)</strong>, em parceria com a Secretaria Municipal de Saúde de Uruguaiana.
+          </p>
+
+          <p>
+            Mais do que um congresso tradicional, a Mostra é um espaço dinâmico de troca horizontal e participativa através de <strong>rodas de conversa</strong>, conectando pesquisas científicas, relatos de experiências do SUS e intervenções comunitárias voltadas à resiliência climática e à saúde da população no Bioma Pampa.
+          </p>
+          
+          <div class="about-highlights">
+              <div class="highlight-item">
+              <i class="ph-bold ph-check text-green"></i>
+              <span>Atuação interdisciplinar estruturada em 5 Grupos de Aprendizagem Tutorial (GATs)</span>
+            </div>
+            <div class="highlight-item">
+              <i class="ph-bold ph-check text-green"></i>
+              <span>Apresentações dialogadas e acolhedoras no formato de Rodas de Conversa</span>
+            </div>
+            <div class="highlight-item">
+              <i class="ph-bold ph-check text-green"></i>
+              <span>Foco nas vulnerabilidades e potencialidades socioambientais do Bioma Pampa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card-info">
+          <div class="card-icon-header">
+            <i class="ph-fill ph-plant"></i>
+          </div>
+          <h4>Cuidado Integral no Território</h4>
+          <p>
+            Ancorada na realidade da Fronteira Oeste e nas margens do Rio Uruguai, a Mostra debate soluções para os desafios sanitários decorrentes de eventos climáticos extremos, valorizando saberes acadêmicos e práticas territoriais.
+          </p>
+          <p>
+            Um momento ímpar de diálogo, troca de vivências e construção coletiva aberto a estudantes, trabalhadores da saúde e toda a comunidade interessada.
+          </p>
+          <div class="institution-badges">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eixos Temáticos da Mostra (Os 3 Eixos Oficiais) -->
+  <section class="section themes-section" id="eixos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ÁREAS DE CONHECIMENTO</span>
+        <h2 class="section-title">Eixos Temáticos da Mostra</h2>
+        <p class="section-subtitle">
+          Os trabalhos científicos e relatos de experiência serão avaliados e apresentados nos três eixos estratégicos:
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Eixo I -->
+        <div class="feature-card">
+          <div class="feature-icon icon-green">
+            <i class="ph-bold ph-shield-plus"></i>
+          </div>
+          <span class="eixo-number">EIXO I</span>
+          <h3>Produção do cuidado no território e vigilância em saúde</h3>
+          <p>Práticas de cuidado territorializadas, atuação da Atenção Primária (ESF), agentes comunitários de saúde e ações de vigilância em saúde ambiental frente aos impactos e vulnerabilidades decorrentes das variações e extremos climáticos.</p>
+        </div>
+
+        <!-- Eixo II -->
+        <div class="feature-card">
+          <div class="feature-icon icon-blue">
+            <i class="ph-bold ph-hospital"></i>
+          </div>
+          <span class="eixo-number">EIXO II</span>
+          <h3>Acesso à atenção especializada</h3>
+          <p>Desafios e estratégias para a garantia de fluxos regulatórios resolutivos, superação de barreiras geográficas e sociais no encaminhamento para serviços de média e alta complexidade na região de fronteira e interior do estado.</p>
+        </div>
+
+        <!-- Eixo III -->
+        <div class="feature-card">
+          <div class="feature-icon icon-orange">
+            <i class="ph-bold ph-broadcast"></i>
+          </div>
+          <span class="eixo-number">EIXO III</span>
+          <h3>Comunicação e inovação</h3>
+          <p>Tecnologias sociais, comunicação em saúde, educação popular, novas linguagens e soluções inovadoras para mobilização social, engajamento comunitário e respostas a emergências sanitárias e climáticas no Bioma Pampa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programação do Evento (A ser divulgada) -->
+  <section class="section schedule-section" id="programacao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PROGRAMAÇÃO</span>
+        <h2 class="section-title">Programação do Evento</h2>
+        <p class="section-subtitle">27 e 28 de Novembro de 2026 &bull; Campus Uruguaiana - UNIPAMPA</p>
+      </div>
+
+      <div class="schedule-pending-card">
+        <div class="schedule-badge-soon">
+          <i class="ph-bold ph-hourglass-high"></i> Em Elaboração pela Comissão Organizadora
+        </div>
+
+        <h3>Programação a Ser Divulgada</h3>
+        <p class="lead-text">
+          A grade horária e a programação detalhada dos 2 dias de evento estão sendo estruturadas e serão disponibilizadas oficialmente nesta página em breve.
+        </p>
+
+        <div class="schedule-pillars-grid">
+          <div class="pillar-item">
+            <i class="ph-bold ph-microphone-stage"></i>
+            <span>Palestra & Conferência de Abertura</span>
+          </div>
+          <div class="pillar-item">
+            <i class="ph-bold ph-chats-circle"></i>
+            <span>Apresentação dos Trabalhos em Rodas de Conversa</span>
+          </div>
+          <div class="pillar-item">
+            <i class="ph-bold ph-chalkboard-teacher"></i>
+            <span>Oficinas Temáticas & Workshops Práticos</span>
+          </div>
+          <div class="pillar-item">
+            <i class="ph-bold ph-trophy"></i>
+            <span>Premiação dos Destaques & Solenidade de Encerramento</span>
+          </div>
+        </div>
+
+        <p class="schedule-footer-note">
+          <i class="ph-bold ph-calendar-check"></i> As salas de apresentação dos trabalhos serão divulgadas no dia <strong>23/11/2026</strong>, conforme o cronograma oficial do edital.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SEÇÃO DE SUBMISSÃO REFORMULADA (CIENTÍFICA & FOTOGRÁFICA)       -->
+  <!-- ============================================================== -->
+  <section class="section submissions-section" id="submissoes">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-tag">SUBMISSÃO DE TRABALHOS & MOSTRA FOTOGRÁFICA</span>
+        <h2 class="section-title">Chamada de Trabalhos e Fotografias</h2>
+        <p class="section-subtitle">
+          Participe da I Mostra apresentando sua produção científica em rodas de conversa ou compartilhando registros visuais sensíveis sobre clima e território na I Mostra Fotográfica.
+        </p>
+      </div>
+
+      <!-- Abas de Navegação das Submissões -->
+      <div class="sub-nav-tabs">
+        <button class="sub-nav-btn active" data-subtab="tab-cientifico">
+          <i class="ph-bold ph-file-text"></i> Trabalhos Científicos (Resumos)
+        </button>
+        <button class="sub-nav-btn" data-subtab="tab-fotografia">
+          <i class="ph-bold ph-camera"></i> I Mostra Fotográfica
+        </button>
+        <button class="sub-nav-btn" data-subtab="tab-cronograma">
+          <i class="ph-bold ph-calendar-check"></i> Cronograma Oficial do Edital
+        </button>
+      </div>
+
+      <!-- Card Principal de Submissão -->
+      <div class="submission-card-full">
+
+        <!-- ABA 1: TRABALHOS CIENTÍFICOS -->
+        <div class="sub-pane active" id="tab-cientifico">
+          
+          <!-- Faixa de Destaques Rápidos -->
+          <div class="sub-quick-highlights">
+            <div class="highlight-pill">
+              <i class="ph-bold ph-calendar-plus"></i>
+              <div>
+                <strong>05/10 a 02/11/2026</strong>
+                <span>Período de Submissão</span>
+              </div>
+            </div>
+            <div class="highlight-pill">
+              <i class="ph-bold ph-chats-circle"></i>
+              <div>
+                <strong>Rodas de Conversa</strong>
+                <span>Até 10 min de apresentação</span>
+              </div>
+            </div>
+            <div class="highlight-pill">
+              <i class="ph-bold ph-books"></i>
+              <div>
+                <strong>Anais com ISBN</strong>
+                <span>Repositório UNIPAMPA</span>
+              </div>
+            </div>
+            <div class="highlight-pill">
+              <i class="ph-bold ph-trophy"></i>
+              <div>
+                <strong>Premiação de Destaques</strong>
+                <span>Melhores notas dos resumos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards Modernos de Regras (Item 6 do Edital) -->
+          <div class="rules-cards-grid">
+            
+            <!-- Regra 1 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon">
+                  <i class="ph-bold ph-user-check"></i>
+                </div>
+                <span class="rule-tag tag-alert">Obrigatório</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Inscrição Prévia & Limite de Autores</h4>
+                <p>
+                  O(a) <strong>autor(a) principal (apresentador) deve estar previamente inscrito no evento</strong>. Cada autor pode submeter até <strong>2 trabalhos</strong> como autor principal. Cada trabalho deve ter <strong>1 orientador(a) e até 8 autores</strong> no total (incluindo apresentador e orientador).
+                </p>
+              </div>
+            </div>
+
+            <!-- Regra 2 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-blue">
+                  <i class="ph-bold ph-eye-slash"></i>
+                </div>
+                <span class="rule-tag tag-blind">Avaliação Cega</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Avaliação às Cegas (Sem Nomes no PDF)</h4>
+                <p>
+                  A avaliação é anônima por pareceristas externos. O arquivo PDF do resumo <strong>não pode conter nenhuma identificação dos autores ou orientador</strong>. Os nomes e vínculos institucionais são informados exclusivamente no formulário online.
+                </p>
+              </div>
+            </div>
+
+            <!-- Regra 3 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon">
+                  <i class="ph-bold ph-text-align-left"></i>
+                </div>
+                <span class="rule-tag tag-norma">Estrutura Obrigatória</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Estrutura e Formatação do Resumo</h4>
+                <p>
+                  Estruturado obrigatoriamente em: <em>Introdução; Objetivo; Método; Resultados; Considerações finais e Referências</em>.
+                </p>
+                <ul>
+                  <li><strong>Extensão:</strong> 1.500 a 3.000 caracteres com espaços (sem contar título, palavras-chave, eixo e referências).</li>
+                  <li><strong>Fonte:</strong> Arial 12, espaçamento simples. Sem gráficos, tabelas ou imagens.</li>
+                  <li><strong>Título:</strong> Até 15 palavras, Arial 12 negrito em CAIXA ALTA.</li>
+                  <li><strong>Normas:</strong> 3 a 5 palavras-chave e 3 a 5 referências em normas ABNT.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Regra 4 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-orange">
+                  <i class="ph-bold ph-shield-check"></i>
+                </div>
+                <span class="rule-tag tag-norma">Ética em Pesquisa</span>
+              </div>
+              <div class="rule-card-body valign-center">
+                <h4>Pesquisas com Seres Humanos (CAAE)</h4>
+                <p>
+                  Estudos com seres humanos devem informar obrigatoriamente o <strong>número do CAAE</strong> aprovado pelo CEP no corpo do resumo, salvo os casos de dispensa previstos na <strong>Resolução nº 510/2016</strong> (ex: revisões de literatura, dados públicos, etc.).
+                </p>
+              </div>
+            </div>
+
+            <!-- Regra 5 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon">
+                  <i class="ph-bold ph-file-pdf"></i>
+                </div>
+                <span class="rule-tag tag-norma">Template Oficial</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Arquivo Único em PDF no Template</h4>
+                <p>
+                  O resumo deve ser formatado a partir do <strong>template oficial do evento</strong> (disponível no botão abaixo) e submetido exclusivamente como arquivo único em <strong>formato PDF</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- Regra 6 -->
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-blue">
+                  <i class="ph-bold ph-google-logo"></i>
+                </div>
+                <span class="rule-tag tag-norma">100% Online</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Formulário Google & Apresentação</h4>
+                <p>
+                  Para o envio, é necessário estar conectado a uma conta Google. Os trabalhos aprovados serão apresentados em formato de <strong>roda de conversa científica (até 10 minutos)</strong> em salas por eixo temático, com publicação nos Anais com ISBN.
+                </p>
+              </div>
+            </div>
+
+          </div><!-- /.rules-cards-grid -->
+
+          <!-- Botões de Ação Científica -->
+          <div class="sub-actions-wrapper">
+            <div class="sub-buttons-group">
+              <a href="https://forms.gle/qvkQ1hmF9cERvZNH6" target="_blank" class="btn btn-primary btn-lg">
+                <i class="ph-bold ph-paper-plane-tilt"></i> Preencher Formulário de Submissão
+              </a>
+              <a href="https://docs.google.com/document/d/1kv_EzUxNJsBhb8w-8T6pZ-WkBJyg9n0w/edit?usp=sharing&ouid=107389116954573775860&rtpof=true&sd=true" target="_blank" class="btn btn-secondary btn-lg">
+                <i class="ph-bold ph-file-doc"></i> Baixar Template Oficial (.DOCX)
+              </a>
+            </div>
+            <p class="sub-help-text">
+              <i class="ph-bold ph-info"></i> Dúvidas sobre normas ou submissão? Envie para <a href="mailto:mostraclimapampa@gmail.com">mostraclimapampa@gmail.com</a>
+            </p>
+          </div>
+
+        </div><!-- /#tab-cientifico -->
+
+        <!-- ABA 2: MOSTRA FOTOGRÁFICA -->
+        <div class="sub-pane" id="tab-fotografia">
+          
+          <!-- Banner Temático da Mostra Fotográfica -->
+          <div class="photo-theme-banner">
+            <span class="photo-theme-tag"><i class="ph-bold ph-sparkle"></i> I Mostra Fotográfica PET-Saúde Clima</span>
+            <h3 class="photo-theme-title">“Clima, saúde e território: olhares sobre o lugar onde vivemos”</h3>
+            <p class="photo-theme-desc">
+              A fotografia como recurso de expressão artística, documental e sensibilização. Registros que retratam os efeitos das condições climáticas e ambientais na vida, na saúde e no cotidiano das populações.
+            </p>
+          </div>
+
+          <!-- Cards de Regras da Fotografia (Item 6 do Edital da Fotografia) -->
+          <div class="rules-cards-grid">
+            
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-blue">
+                  <i class="ph-bold ph-user"></i>
+                </div>
+                <span class="rule-tag tag-norma">Individual</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Participação & Autoria Própria</h4>
+                <p>
+                  Aberta a discentes, docentes, trabalhadores dos serviços de saúde e comunidade. Participação individual, sendo necessária uma inscrição específica para cada fotografia de autoria própria.
+                </p>
+              </div>
+            </div>
+
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon">
+                  <i class="ph-bold ph-image"></i>
+                </div>
+                <span class="rule-tag tag-norma">JPEG ou PNG</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Formato & Resolução Digital</h4>
+                <p>
+                  Submissão em formato digital JPEG ou PNG, com resolução suficiente para exibição digital e/ou impressão. Aceitas fotos de <strong>celular ou câmera</strong> (não são aceitas imagens 100% geradas por IA).
+                </p>
+              </div>
+            </div>
+
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-orange">
+                  <i class="ph-bold ph-text-align-justify"></i>
+                </div>
+                <span class="rule-tag tag-norma">Até 500 Caracteres</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Descrição da Obra & Local</h4>
+                <p>
+                  No formulário deverão constar: título, local e data aproximada do registro, além de breve descrição de <strong>até 500 caracteres</strong> apresentando a relação da foto com o tema da Mostra.
+                </p>
+              </div>
+            </div>
+
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon">
+                  <i class="ph-bold ph-shield-slash"></i>
+                </div>
+                <span class="rule-tag tag-blind">Anônima</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Sem Marcas D'água ou Identificação</h4>
+                <p>
+                  A imagem <strong>não pode conter marcas d'água, assinaturas, logotipos ou molduras</strong> durante a avaliação. São permitidos ajustes básicos de luz, contraste, enquadramento e cor.
+                </p>
+              </div>
+            </div>
+
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-blue">
+                  <i class="ph-bold ph-presentation"></i>
+                </div>
+                <span class="rule-tag tag-norma">27 e 28/11</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Exposição Durante a Mostra</h4>
+                <p>
+                  As fotografias com maior pontuação (avaliadas em adequação ao tema, criatividade, qualidade estética e reflexão) integrarão a <strong>exposição presencial/digital no Campus Uruguaiana</strong>.
+                </p>
+              </div>
+            </div>
+
+            <div class="rule-card">
+              <div class="rule-card-header">
+                <div class="rule-card-icon icon-orange">
+                  <i class="ph-bold ph-heart"></i>
+                </div>
+                <span class="rule-tag tag-alert">Direito de Imagem</span>
+              </div>
+              <div class="rule-card-body">
+                <h4>Aspectos Éticos & Autorização</h4>
+                <p>
+                  Fotos com pessoas identificáveis exigem autorização para uso de imagem (com especial atenção a crianças/adolescentes). É vedada a exposição em situações discriminatórias ou vexatórias.
+                </p>
+              </div>
+            </div>
+
+          </div><!-- /.rules-cards-grid -->
+
+          <!-- Banner de Premiação da Fotografia com Voto Popular -->
+          <div class="prize-banner-card">
+            <div class="prize-icon-circle">
+              <i class="ph-fill ph-trophy"></i>
+            </div>
+            <div class="prize-text">
+              <h4>Premiação Oficial & Escolha do Público</h4>
+              <p>
+                Serão premiados: <strong>1º Lugar (Melhor Fotografia)</strong>, <strong>2º e 3º Lugares (Fotografia Destaque)</strong> e a categoria especial <strong>“Escolha do Público”</strong>, definida por votação de todos os participantes durante o evento!
+              </p>
+            </div>
+          </div>
+
+          <!-- Botões da Mostra Fotográfica -->
+          <div class="sub-actions-wrapper">
+            <div class="sub-buttons-group">
+              <button class="btn btn-secondary btn-lg" onclick="alert('O formulário eletrônico exclusivo para a submissão de fotografias será disponibilizado em breve nesta página pela comissão organizadora. Dúvidas: mostraclimapampa@gmail.com');">
+                <i class="ph-bold ph-hourglass-high"></i> Formulário de Fotografias (Disponível em Breve)
+              </button>
+              <a href="mailto:mostraclimapampa@gmail.com" class="btn btn-outline btn-lg">
+                <i class="ph-bold ph-envelope"></i> Dúvidas: mostraclimapampa@gmail.com
+              </a>
+            </div>
+            <p class="sub-help-text">
+              <i class="ph-bold ph-info"></i> A submissão das fotografias será realizada através de um <strong>formulário eletrônico específico disponibilizado em breve</strong> pela comissão organizadora (período oficial de <strong>05/10 a 02/11/2026</strong>).
+            </p>
+          </div>
+
+        </div><!-- /#tab-fotografia -->
+
+        <!-- ABA 3: CRONOGRAMA OFICIAL -->
+        <div class="sub-pane" id="tab-cronograma">
+          
+          <div class="official-cronograma-timeline">
+            
+            <div class="crono-item crono-highlight">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-megaphone"></i> 05/10/2026
+              </div>
+              <div class="crono-info">
+                <h4>Divulgação Oficial & Início das Inscrições</h4>
+                <p>Publicação dos editais, abertura das submissões e inscrições de ouvintes.</p>
+              </div>
+            </div>
+
+            <div class="crono-item crono-highlight">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-paper-plane-tilt"></i> 05/10 a 02/11/2026
+              </div>
+              <div class="crono-info">
+                <h4>Período de Submissão de Trabalhos & Fotografias</h4>
+                <p>Envio exclusivamente online dos resumos científicos em PDF e arquivos digitais de fotografia.</p>
+              </div>
+            </div>
+
+            <div class="crono-item">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-magnifying-glass"></i> 05/10 a 20/11/2026
+              </div>
+              <div class="crono-info">
+                <h4>Avaliação pelos Pareceristas Externos</h4>
+                <p>Processo de avaliação às cegas de 0 a 10 pontos nos critérios do edital.</p>
+              </div>
+            </div>
+
+            <div class="crono-item">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-door"></i> 23/11/2026
+              </div>
+              <div class="crono-info">
+                <h4>Divulgação dos Trabalhos & Salas de Apresentação</h4>
+                <p>Publicação da lista de selecionados para as rodas e fotografias da exposição.</p>
+              </div>
+            </div>
+
+            <div class="crono-item crono-highlight">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-calendar"></i> 27 e 28/11/2026
+              </div>
+              <div class="crono-info">
+                <h4>Realização da I Mostra no Campus Uruguaiana</h4>
+                <p>Abertura, conferência magna, rodas de conversa, oficinas, mostra fotográfica e premiação.</p>
+              </div>
+            </div>
+
+            <div class="crono-item">
+              <div class="crono-date-box">
+                <i class="ph-bold ph-certificate"></i> A partir de 30/11/2026
+              </div>
+              <div class="crono-info">
+                <h4>Envio de Certificados & Publicação dos Anais com ISBN</h4>
+                <p>Disponibilização dos anais no repositório institucional e certificados digitais.</p>
+              </div>
+            </div>
+
+          </div><!-- /.official-cronograma-timeline -->
+
+          <div class="sub-actions-wrapper">
+            <p class="sub-help-text">
+              <i class="ph-bold ph-info"></i> Cronograma oficial publicado pela Comissão Organizadora.
+            </p>
+          </div>
+
+        </div><!-- /#tab-cronograma -->
+
+      </div><!-- /.submission-card-full -->
+
+    </div>
+  </section>
+
+
+
+  <!-- Seção Unificada de Inscrição de Ouvintes (Em Breve) -->
+  <section class="section registration-section" id="inscricao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">PARTICIPAÇÃO</span>
+        <h2 class="section-title">Inscrição de Ouvintes</h2>
+        <p class="section-subtitle">
+          A participação como ouvinte é 100% gratuita e aberta a toda a comunidade acadêmica, trabalhadores da saúde e comunidade em geral.
+        </p>
+      </div>
+
+      <div class="listener-card">
+        <!-- Sinalização de Disponibilidade em Breve -->
+        <div class="listener-status-badge">
+          <i class="ph-bold ph-hourglass-high"></i> Inscrições para Ouvintes Disponíveis em Breve
+        </div>
+
+        <div class="listener-card-header">
+          <h3>Participe como Ouvinte na I Mostra</h3>
+          <p class="listener-card-desc">
+            O link oficial para a inscrição gratuita de ouvintes será disponibilizado nesta página muito em breve pela comissão organizadora. Fique atento às divulgações!
+          </p>
+          <div class="price-free">
+            <span class="free-tag">100% Gratuito</span>
+            <span class="free-sub">&bull; Certificado Oficial de até 10 Horas</span>
+          </div>
+        </div>
+
+        <div class="listener-action-box">
+          <div class="btn-disabled-wrapper">
+            <button class="btn btn-disabled" disabled>
+              <i class="ph-bold ph-clock"></i> Link de Inscrição Disponível em Breve
+            </button>
+          </div>
+          <p class="listener-note">
+            <i class="ph-bold ph-envelope"></i> Dúvidas sobre inscrições? Entre em contato: <a href="mailto:mostraclimapampa@gmail.com">mostraclimapampa@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Localização em Uruguaiana/RS -->
+  <section class="section location-section" id="local">
+    <div class="container">
+      <div class="location-wrapper">
+        <div class="location-info">
+          <span class="section-tag">COMO CHEGAR</span>
+          <h2 class="section-title">Campus Uruguaiana - UNIPAMPA</h2>
+          <p class="location-desc">
+            A I Mostra será realizada nas dependências da <strong>Universidade Federal do Pampa - Campus Uruguaiana</strong>, um centro de referência em formação na área de saúde e biociências no oeste do Rio Grande do Sul.
+          </p>
+          
+          <div class="location-details">
+            <div class="loc-item">
+              <i class="ph-bold ph-map-pin text-green"></i>
+              <div>
+                <strong>Endereço Oficial</strong>
+                <p>BR-472, Km 592 - Caixa Postal 118, Uruguaiana - RS, CEP 97501-970</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/czWEHdAYQ6LwR3LaA" target="_blank" class="btn btn-secondary">
+            <i class="ph-bold ph-arrow-square-out"></i> Abrir no Google Maps
+          </a>
+        </div>
+
+        <div class="location-map">
+          <div class="map-card">
+            <!-- Iframe Real e Interativo com a Localização Exata da UNIPAMPA Campus Uruguaiana -->
+            <div class="map-iframe-wrapper">
+              <iframe 
+                title="Localização da UNIPAMPA Campus Uruguaiana"
+                src="https://maps.google.com/maps?q=-29.8307068,-57.1015149&hl=pt-BR&z=15&output=embed" 
+                loading="lazy" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="map-footer">
+              <span><i class="ph ph-compass"></i> BR-472, Km 592 &bull; Uruguaiana / RS</span>
+              <span class="status-badge"><i class="ph-fill ph-check-circle"></i> Local Confirmado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perguntas Frequentes (FAQ) -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TIRE SUAS DÚVIDAS</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Informações importantes para você planejar sua participação na Mostra.</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qual é o período oficial para submissão de trabalhos?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O período de submissão vai de <strong>05 de outubro a 02 de novembro de 2026</strong>. As submissões são realizadas exclusivamente de forma online através do formulário oficial.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quantos trabalhos posso submeter como autor principal?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Cada autor(a) pode submeter até <strong>2 trabalhos como autor(a) principal</strong>. Cada trabalho deve contar com 1 orientador(a) e até 8 autores no total (incluindo o apresentador e o orientador nesse quantitativo). O autor principal deve obrigatoriamente estar inscrito no evento.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como funciona a avaliação "às cegas" dos resumos?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Para garantir a imparcialidade da avaliação científica, o arquivo do resumo em PDF <strong>não pode conter nenhuma identificação dos autores</strong> nem do orientador. Essas informações serão preenchidas unicamente nos campos do formulário Google.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qual formato de arquivo deve ser enviado?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O resumo deve ser enviado em <strong>arquivo único no formato PDF</strong>, formatado rigorosamente de acordo com o template oficial disponibilizado na página. Estudos com seres humanos devem incluir o número do CAAE no corpo do texto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Quando abrem as inscrições para ouvintes?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O link oficial para a inscrição de ouvintes será disponibilizado muito em breve nesta mesma página. A inscrição é única, 100% gratuita e aberta a estudantes, profissionais e comunidade.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como funcionarão as apresentações em forma de Roda de Conversa?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>As apresentações fogem do modelo rígido tradicional. Os autores apresentarão suas vivências e pesquisas em círculos temáticos abertos, com a mediação de facilitadores, incentivando a troca direta e horizontal de experiências entre estudantes, trabalhadores do SUS e a comunidade presente.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como funciona a I Mostra Fotográfica e como faço para enviar?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>A <strong>I Mostra Fotográfica PET-Saúde Clima</strong> é aberta a estudantes, docentes, trabalhadores da saúde e comunidade em geral. A participação é individual, com envio de fotos autorais em formato JPEG ou PNG sobre o tema <em>“Clima, saúde e território: olhares sobre o lugar onde vivemos”</em>, acompanhadas de descrição de até 500 caracteres. A submissão será realizada por meio de <strong>formulário eletrônico próprio disponibilizado em breve</strong> nesta página. As obras selecionadas serão expostas no evento e concorrem à premiação com troféu <strong>“Escolha do Público”</strong>!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Os trabalhos científicos apresentados serão publicados em Anais?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! Os trabalhos aprovados na avaliação e apresentados nas rodas de conversa serão publicados nos <strong>Anais oficiais da I Mostra</strong> em formato eletrônico no repositório institucional da UNIPAMPA, com registro <strong>ISBN</strong>.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Como posso entrar em contato com a organização da Mostra?</span>
+            <i class="ph-bold ph-caret-down faq-arrow"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Dúvidas sobre o evento, submissões e edital podem ser enviadas diretamente para o e-mail oficial: <strong>mostraclimapampa@gmail.com</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Institucional -->
+  <footer class="footer" id="contato">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="brand-link">
+          <img src="img/logo_oficial.png" alt="Logo PET-Saúde CLIMA UNIPAMPA" class="brand-logo-oficial" />
+        </a>
+        <p class="footer-tagline">
+          I Mostra PET Saúde Clima - ClimaPampa &bull; Integração ensino-serviço-comunidade dedicada à saúde e ao clima no Bioma Pampa.
+        </p>
+        <div class="social-links">
+          <a href="mailto:mostraclimapampa@gmail.com" aria-label="E-mail da Mostra"><i class="ph-bold ph-envelope"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="ph-bold ph-instagram-logo"></i></a>
+          <a href="https://unipampa.edu.br" target="_blank" aria-label="Portal UNIPAMPA"><i class="ph-bold ph-globe"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navegação</h4>
+          <a href="#sobre">Sobre a Mostra</a>
+          <a href="#eixos">Eixos Temáticos</a>
+          <a href="#programacao">Programação (27 e 28/11)</a>
+          <a href="#submissoes">Submissão de Trabalhos</a>
+          <a href="#inscricao">Inscrição de Ouvintes</a>
+        </div>
+
+        <div class="link-group">
+          <h4>Contato & Realização</h4>
+          <a href="mailto:mostraclimapampa@gmail.com"><i class="ph ph-envelope"></i> mostraclimapampa@gmail.com</a>
+          <span>Universidade Federal do Pampa (UNIPAMPA)</span>
+          <span>Campus Uruguaiana - RS</span>
+          <span>Programa PET-Saúde &bull; SUS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 I Mostra PET Saúde Clima - ClimaPampa &bull; UNIPAMPA Campus Uruguaiana. Todos os direitos reservados.</p>
+      <p>Contato oficial: <a href="mailto:mostraclimapampa@gmail.com" style="color: #86efac; text-decoration: none;">mostraclimapampa@gmail.com</a> &bull; Hospedado no <strong>GitHub Pages</strong>.</p>
+    </div>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

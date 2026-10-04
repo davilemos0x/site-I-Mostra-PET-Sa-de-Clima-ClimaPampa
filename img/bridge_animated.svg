@@ -1,0 +1,263 @@
+<svg id="bridgeSvg" class="bridge-svg" viewBox="0 0 1024 408" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente do Céu -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdfefb" />
+      <stop offset="55%" stop-color="#f2f8f7" />
+      <stop offset="100%" stop-color="#def0f4" />
+    </linearGradient>
+
+    <!-- Gradiente do Rio Uruguai -->
+    <linearGradient id="riverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38a5dd" />
+      <stop offset="45%" stop-color="#1e7bb7" />
+      <stop offset="100%" stop-color="#114e7a" />
+    </linearGradient>
+
+    <!-- Gradiente do Sol -->
+    <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe682" />
+      <stop offset="60%" stop-color="#ffb03a" />
+      <stop offset="100%" stop-color="#f97316" />
+    </radialGradient>
+
+    <!-- Gradiente das Torres -->
+    <linearGradient id="towerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="40%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+
+    <!-- Gradiente da Rodovia -->
+    <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="50%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Máscara de Construção da Pista (ClipPath animado) -->
+    <clipPath id="deckClip">
+      <rect id="deckClipRect" x="480" y="260" width="544" height="150" />
+    </clipPath>
+  </defs>
+
+  <!-- Fundo do Céu -->
+  <rect width="1024" height="408" fill="url(#skyGradient)" />
+
+  <!-- Nuvens Distantes de Fundo -->
+  <g id="cloudBackgroundGroup" class="anim-fade-in">
+    <path d="M 580,240 Q 610,210 650,225 Q 680,205 720,220 Q 750,210 780,230 L 780,260 L 580,260 Z" fill="#ffffff" opacity="0.6" />
+    <path d="M 750,220 Q 780,190 820,205 Q 850,185 890,200 Q 930,195 960,220 L 960,260 L 750,260 Z" fill="#ffffff" opacity="0.5" />
+  </g>
+
+  <!-- O Sol Poente / Nascente sobre o Rio -->
+  <g id="sunGroup" class="anim-sun">
+    <circle cx="685" cy="245" r="75" fill="url(#sunGradient)" opacity="0.95" />
+    <circle cx="685" cy="245" r="95" fill="#f97316" opacity="0.15" />
+  </g>
+
+  <!-- Nuvem de Chuva e Clima à Direita -->
+  <g id="rainCloudGroup" class="anim-cloud">
+    <!-- Nuvem Escura de Chuva -->
+    <path d="M 830,120 Q 820,80 860,65 Q 890,40 930,55 Q 965,35 1000,60 Q 1030,85 1010,125 Q 990,140 850,140 Z" fill="#2d527c" />
+    <path d="M 840,115 Q 830,85 870,72 Q 895,50 930,62 Q 960,48 990,70 Q 1015,90 995,122 Z" fill="#4377a8" opacity="0.5" />
+    <!-- Gotas / Linhas de Chuva Animadas -->
+    <g id="rainLines" class="anim-rain">
+      <line x1="840" y1="150" x2="825" y2="185" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+      <line x1="865" y1="150" x2="850" y2="190" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+      <line x1="890" y1="150" x2="875" y2="185" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+      <line x1="915" y1="150" x2="900" y2="195" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+      <line x1="940" y1="150" x2="925" y2="185" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+      <line x1="965" y1="150" x2="950" y2="190" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="8 6" />
+    </g>
+    <!-- Espirais de Vento -->
+    <path d="M 970,165 Q 1000,160 1015,145 Q 1030,130 1020,115 Q 1005,110 995,125" fill="none" stroke="#e0f2fe" stroke-width="3" stroke-linecap="round" class="anim-wind" />
+    <path d="M 945,190 Q 980,185 1005,170 Q 1025,155 1015,140" fill="none" stroke="#e0f2fe" stroke-width="2" stroke-linecap="round" class="anim-wind" />
+  </g>
+
+  <!-- O Majestoso Rio Uruguai -->
+  <g id="riverGroup" class="anim-river">
+    <!-- Superfície do Rio -->
+    <path d="M 230,408 L 260,305 Q 400,265 650,268 L 1024,260 L 1024,408 Z" fill="url(#riverGradient)" />
+    <!-- Margem Distante com Vegetação do Pampa -->
+    <path d="M 255,308 Q 380,268 550,270 Q 750,266 1024,262 L 1024,272 Q 750,276 550,278 Q 380,277 250,314 Z" fill="#0d5c3a" />
+    <!-- Ondulações / Reflexos da Água -->
+    <g class="water-waves" stroke="#60a5fa" stroke-width="1.5" opacity="0.6">
+      <path d="M 320,335 Q 360,330 400,335 Q 440,340 480,335" />
+      <path d="M 520,350 Q 560,345 600,350 Q 640,355 680,350" />
+      <path d="M 360,375 Q 410,370 460,375 Q 510,380 560,375" />
+      <path d="M 620,310 Q 660,306 700,310 Q 740,314 780,310" />
+      <path d="M 780,335 Q 820,330 860,335 Q 900,340 940,335" />
+    </g>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- A PONTE INTERNACIONAL URUGUAIANA - PASO DE LOS LIBRES          -->
+  <!-- ============================================================== -->
+  <g id="bridgeConstructionGroup">
+    
+    <!-- 1. PILARES DE CONCRETO (SUBESTRUTURA QUE BROTA DA ÁGUA) -->
+    <g id="bridgePillarsGroup">
+      <!-- Pilar 1 (Primeiro plano) -->
+      <polygon id="pier1" class="bridge-pier pier-1" points="535,395 550,395 548,408 533,408" fill="#475569" stroke="#334155" />
+      <!-- Pilar 2 -->
+      <polygon id="pier2" class="bridge-pier pier-2" points="585,372 598,372 597,400 584,400" fill="#475569" stroke="#334155" />
+      <!-- Pilar 3 -->
+      <polygon id="pier3" class="bridge-pier pier-3" points="635,352 646,352 645,382 634,382" fill="#475569" stroke="#334155" />
+      <!-- Pilar 4 (Base da Torre 1) -->
+      <polygon id="pier4" class="bridge-pier pier-4" points="685,335 698,335 697,368 684,368" fill="#334155" />
+      <!-- Pilar 5 (Base da Torre 2) -->
+      <polygon id="pier5" class="bridge-pier pier-5" points="742,320 754,320 753,355 741,355" fill="#334155" />
+      <!-- Pilar 6 -->
+      <polygon id="pier6" class="bridge-pier pier-6" points="798,308 808,308 807,338 797,338" fill="#475569" />
+      <!-- Pilar 7 -->
+      <polygon id="pier7" class="bridge-pier pier-7" points="848,298 857,298 856,325 847,325" fill="#475569" />
+      <!-- Pilar 8 -->
+      <polygon id="pier8" class="bridge-pier pier-8" points="895,290 903,290 902,314 894,314" fill="#64748b" />
+      <!-- Pilar 9 -->
+      <polygon id="pier9" class="bridge-pier pier-9" points="935,283 942,283 941,304 934,304" fill="#64748b" />
+      <!-- Pilar 10 (Margem Argentina) -->
+      <polygon id="pier10" class="bridge-pier pier-10" points="972,277 978,277 977,295 971,295" fill="#64748b" />
+    </g>
+
+    <!-- 2. O TABULEIRO DA RODOVIA (ESTENDE-SE DE ESQUERDA PARA A DIREITA) -->
+    <g id="bridgeRoadwayGroup" class="bridge-roadway">
+      <!-- Viga mestra / base de concreto da pista -->
+      <polygon points="505,398 995,274 995,281 505,407" fill="url(#roadGrad)" />
+      <!-- Superfície asfáltica onde transitam os veículos -->
+      <polygon points="510,392 995,272 995,276 510,396" fill="#1e293b" />
+      <!-- Faixa central amarela da rodovia internacional -->
+      <line x1="515" y1="394" x2="990" y2="274" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="8 6" />
+      <!-- Guarda-corpo / Grade de proteção da ponte -->
+      <line x1="505" y1="384" x2="995" y2="268" stroke="#94a3b8" stroke-width="2" />
+      <line x1="505" y1="388" x2="995" y2="270" stroke="#64748b" stroke-width="1" />
+      <!-- Montantes verticais do guarda-corpo -->
+      <path d="M 525,385 L 525,394 M 555,381 L 555,390 M 585,377 L 585,386 M 615,373 L 615,382 M 645,369 L 645,378 M 675,365 L 675,374 M 715,360 L 715,369 M 745,356 L 745,365 M 775,352 L 775,361 M 805,348 L 805,357 M 835,344 L 835,353 M 865,340 L 865,349 M 895,336 L 895,345 M 925,332 L 925,341 M 955,328 L 955,337 M 985,324 L 985,333" stroke="#94a3b8" stroke-width="1.2" />
+    </g>
+
+    <!-- Ponto Laser / Centelha de Construção da Pista -->
+    <circle id="constructionSpark" class="construction-spark" cx="505" cy="392" r="5" fill="#38bdf8" />
+
+    <!-- 3. AS DUAS MAJESTOSAS TORRES GÊMEAS ART DÉCO -->
+    <g id="bridgeTowersGroup">
+      
+      <!-- TORRE 1 (ESQUERDA - Uruguaiana) -->
+      <g id="tower1" class="bridge-tower tower-left">
+        <!-- Base e corpo escalonado -->
+        <polygon points="680,345 704,340 702,230 682,230" fill="url(#towerGrad)" stroke="#475569" stroke-width="0.8" />
+        <!-- Segundo nível / corpo superior -->
+        <polygon points="684,230 700,230 698,195 686,195" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8" />
+        <!-- Detalhes do pórtico e janelas da torre -->
+        <rect x="688" y="245" width="8" height="30" rx="4" fill="#1e293b" opacity="0.8" />
+        <rect x="689" y="202" width="6" height="16" rx="2" fill="#1e293b" opacity="0.8" />
+        <!-- Frisos horizontais Art Déco -->
+        <line x1="681" y1="310" x2="703" y2="307" stroke="#334155" stroke-width="1.5" />
+        <line x1="682" y1="280" x2="702" y2="278" stroke="#334155" stroke-width="1.5" />
+        <!-- Agulha / Pináculo da Torre -->
+        <polygon points="691,195 693,195 692.5,160 691.5,160" fill="#f8fafc" />
+        <!-- Luz de Sinalização no Topo -->
+        <circle cx="692" cy="160" r="3" fill="#ef4444" class="tower-beacon" />
+      </g>
+
+      <!-- TORRE 2 (DIREITA - Paso de los Libres) -->
+      <g id="tower2" class="bridge-tower tower-right">
+        <!-- Base e corpo escalonado -->
+        <polygon points="738,332 760,327 758,225 740,225" fill="url(#towerGrad)" stroke="#475569" stroke-width="0.8" />
+        <!-- Segundo nível / corpo superior -->
+        <polygon points="742,225 756,225 754,192 744,192" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8" />
+        <!-- Detalhes do pórtico e janelas da torre -->
+        <rect x="745" y="242" width="8" height="28" rx="4" fill="#1e293b" opacity="0.8" />
+        <rect x="746" y="198" width="6" height="15" rx="2" fill="#1e293b" opacity="0.8" />
+        <!-- Frisos horizontais Art Déco -->
+        <line x1="739" y1="300" x2="759" y2="297" stroke="#334155" stroke-width="1.5" />
+        <line x1="740" y1="272" x2="758" y2="270" stroke="#334155" stroke-width="1.5" />
+        <!-- Agulha / Pináculo da Torre -->
+        <polygon points="748,192 750,192 749.5,162 748.5,162" fill="#f8fafc" />
+        <!-- Luz de Sinalização no Topo -->
+        <circle cx="749" cy="162" r="3" fill="#ef4444" class="tower-beacon" />
+      </g>
+
+      <!-- Cabos de suspensão e iluminação pública da ponte -->
+      <g id="bridgeLamps" class="anim-lamps">
+        <circle cx="560" cy="378" r="2.5" fill="#fef08a" />
+        <circle cx="620" cy="365" r="2.5" fill="#fef08a" />
+        <circle cx="682" cy="345" r="3" fill="#fef08a" />
+        <circle cx="740" cy="332" r="3" fill="#fef08a" />
+        <circle cx="800" cy="315" r="2.5" fill="#fef08a" />
+        <circle cx="860" cy="302" r="2.5" fill="#fef08a" />
+        <circle cx="920" cy="290" r="2.5" fill="#fef08a" />
+      </g>
+    </g>
+
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- MOLDURA DINÂMICA DAS ONDAS DO BIOMA PAMPA (TOP E BOTTOM)       -->
+  <!-- ============================================================== -->
+  <g id="bannerWavesBorder">
+    <!-- Faixa Superior em Verde e Azul -->
+    <path d="M 0,0 L 450,0 Q 300,50 150,25 Q 60,10 0,60 Z" fill="#0d5c3a" class="anim-ribbon" />
+    <path d="M 400,0 L 1024,0 L 1024,40 Q 880,10 750,30 Q 600,50 400,0 Z" fill="#1e7bb7" class="anim-ribbon" />
+    <path d="M 0,0 L 250,0 Q 150,35 0,35 Z" fill="#1b8da8" opacity="0.6" />
+
+    <!-- Faixa Inferior em Verde e Azul -->
+    <path d="M 0,408 L 0,320 Q 80,310 180,345 Q 320,395 500,380 L 500,408 Z" fill="#0d5c3a" class="anim-ribbon" />
+    <path d="M 0,408 L 0,345 Q 120,335 220,375 Q 350,415 500,395 L 500,408 Z" fill="#1e7bb7" opacity="0.8" class="anim-ribbon" />
+    <path d="M 450,408 Q 650,375 850,395 Q 940,405 1024,375 L 1024,408 Z" fill="#0d5c3a" class="anim-ribbon" />
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- LOGOTIPO COMPLETO: EMBLEMA + TEXTO PET-SAÚDE CLIMA UNIPAMPA   -->
+  <!-- ============================================================== -->
+  <g id="logoBrandGroup" class="anim-brand-group">
+    
+    <!-- 1. O Emblema Circular (Sol, Ondas, Capelo e Folha) -->
+    <g id="emblemGroup" transform="translate(30, 80)">
+      <!-- Sol / Globo em Degradê Laranja-Vermelho -->
+      <circle cx="120" cy="110" r="62" fill="url(#sunGradient)" class="anim-emblem-sun" />
+      
+      <!-- Águas / Ondas Azuis dentro do Emblema -->
+      <path d="M 65,130 Q 100,105 130,125 Q 160,145 180,130 Q 185,150 170,165 Q 120,185 75,155 Z" fill="#2563eb" />
+      <path d="M 75,145 Q 105,128 135,142 Q 160,152 175,140 Q 165,165 125,172 Q 90,172 75,145 Z" fill="#38bdf8" />
+      <path d="M 95,158 Q 120,148 145,158" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+      
+      <!-- O Capelo Acadêmico (Graduation Hat) -->
+      <g id="graduationCap" class="anim-capelo" transform="translate(68, 48)">
+        <polygon points="50,0 100,18 50,36 0,18" fill="#f8fafc" stroke="#f59e0b" stroke-width="2.5" />
+        <polygon points="50,5 92,20 50,32 10,20" fill="#ffffff" />
+        <path d="M 22,26 L 22,42 Q 50,56 78,42 L 78,26" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+        <!-- Fita e Pingente (Tassel) Dourado -->
+        <circle cx="50" cy="18" r="3.5" fill="#f59e0b" />
+        <path d="M 50,18 Q 20,24 16,42" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+        <circle cx="16" cy="44" r="3.5" fill="#f59e0b" />
+      </g>
+
+      <!-- A Folha Verde do Bioma Pampa -->
+      <g id="leafGreen" class="anim-leaf" transform="translate(30, 135)">
+        <path d="M 0,55 C 10,20 45,5 75,15 C 80,45 60,80 15,80 C 5,80 0,70 0,55 Z" fill="#16a34a" />
+        <path d="M 5,55 C 20,30 45,20 70,18" fill="none" stroke="#86efac" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M 25,43 Q 35,32 45,35" fill="none" stroke="#86efac" stroke-width="1.8" />
+        <path d="M 40,55 Q 52,46 62,50" fill="none" stroke="#86efac" stroke-width="1.8" />
+      </g>
+    </g>
+
+    <!-- 2. Tipografia Oficial -->
+    <g id="textGroup" class="anim-text-group" transform="translate(260, 140)">
+      <!-- "I MOSTRA DO" -->
+      <text x="0" y="0" font-family="'Outfit', 'Inter', sans-serif" font-size="28" font-weight="800" fill="#0d5c3a" letter-spacing="2">I MOSTRA DO</text>
+      
+      <!-- "PET-Saúde" -->
+      <text x="0" y="52" font-family="'Outfit', 'Inter', sans-serif" font-size="52" font-weight="900" fill="#0d5c3a" letter-spacing="-1">PET-Saúde</text>
+      
+      <!-- "CLIMA" -->
+      <text x="0" y="125" font-family="'Outfit', 'Inter', sans-serif" font-size="78" font-weight="900" fill="#1d4ed8" letter-spacing="0">CLIMA</text>
+      
+      <!-- Linha / Barra Verde sob CLIMA -->
+      <rect x="0" y="140" width="280" height="7" rx="3.5" fill="#0d5c3a" class="anim-line-reveal" />
+      
+      <!-- "U N I P A M P A" -->
+      <text x="5" y="172" font-family="'Outfit', 'Inter', sans-serif" font-size="22" font-weight="800" fill="#0d5c3a" letter-spacing="18">UNIPAMPA</text>
+    </g>
+
+  </g>
+</svg>
