@@ -548,6 +548,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.75;
   margin-bottom: 1.25rem;
+  text-align: justify;
 }
 
 .about-highlights {
@@ -1217,6 +1218,11 @@ body {
   border-color: rgba(234, 88, 12, 0.25);
 }
 
+.rule-card-body p,
+.rule-card-body li {
+  text-align: justify;
+}
+
 .rule-tag {
   font-size: 0.72rem;
   font-weight: 800;
@@ -1612,6 +1618,7 @@ body {
   font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .location-details {
