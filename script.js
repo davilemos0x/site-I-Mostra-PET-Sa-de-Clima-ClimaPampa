@@ -149,5 +149,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ==========================================================================
+     7. ABAS DA COMISSÃO ORGANIZADORA
+     ========================================================================== */
+  const comTabButtons = document.querySelectorAll('.com-tab-btn');
+  const comPanes = document.querySelectorAll('.com-pane');
+
+  comTabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetPaneId = button.getAttribute('data-comtab');
+
+      comTabButtons.forEach(btn => btn.classList.remove('active'));
+      comPanes.forEach(pane => pane.classList.remove('active'));
+
+      button.classList.add('active');
+      const targetPane = document.getElementById(targetPaneId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
 });
 
